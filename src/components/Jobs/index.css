@@ -1,0 +1,156 @@
+.jobs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+.jobs-card {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 20px;
+  font-family: Roboto;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .profile-container {
+    width: 40%;
+  }
+}
+
+.job-list-container {
+  width: 100%;
+}
+
+.search-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #cbd5e1;
+}
+
+@media screen and (min-width: 768px) {
+  .job-list-container {
+    width: 75%;
+    margin-left: 20px;
+  }
+
+  .jobs-card {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+}
+
+.mobile-search-input {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: #7e858e;
+  width: 100%;
+}
+
+.search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #64748b;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.search-icon {
+  color: #f8fcf2;
+  font-size: 22px;
+}
+
+.profile-card {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 5%;
+  border-radius: 20px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.profile-heading {
+  color: #6366f1;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.profile-bio {
+  color: #2c364c;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-fail-card {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+}
+
+.retry-button {
+  background-color: #4f46e5;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+}

@@ -1,0 +1,128 @@
+.job-lists {
+  display: flex;
+  flex-direction: column;
+  background-color: #272727;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.company-head-card {
+  display: flex;
+  align-items: center;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+}
+
+.company-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.company-title {
+  margin-bottom: 0px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.company-rating {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media screen and(min-width:768px) {
+  .company-title {
+    font-size: 22px;
+  }
+
+  .company-rating {
+    font-size: 18px;
+  }
+}
+
+.company-rating-icon {
+  color: #fbbf24;
+  margin-right: 5px;
+}
+
+.company-details-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.company-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.company-location-type {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.location-type-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.company-package {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.separate {
+  width: 100%;
+  border: 1px solid #b6c5ff;
+}
+
+.company-description-card {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.company-description {
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+@media screen and (min-width: 768px) {
+  .company-location-type {
+    font-size: 16px;
+  }
+
+  .location-type-icon {
+    font-size: 20px;
+  }
+
+  .company-package {
+    font-size: 16px;
+  }
+
+  .company-description-card {
+    font-size: 18px;
+  }
+
+  .company-description {
+    font-size: 16px;
+  }
+}
