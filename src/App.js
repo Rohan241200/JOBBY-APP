@@ -54,9 +54,13 @@ const App = () => (
     <ProtectedRoute
       exact
       path="/jobs"
-      component={Jobs}
-      employmentTypesList={employmentTypesList}
-      salaryRangesList={salaryRangesList}
+      render={props => (
+        <Jobs
+          {...props}
+          employmentTypesList={employmentTypesList}
+          salaryRangesList={salaryRangesList}
+        />
+      )}
     />
     <ProtectedRoute exact path="/jobs/:id" component={SimilarJobs} />
     <Route exact path="/not-found" component={NotFound} />

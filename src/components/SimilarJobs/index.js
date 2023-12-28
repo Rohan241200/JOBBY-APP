@@ -7,6 +7,8 @@ import {BsBriefcaseFill} from 'react-icons/bs'
 import {BiLinkExternal} from 'react-icons/bi'
 import Header from '../Header'
 import './index.css'
+import SimilarJobsList from '../SimilarJobsLists'
+import SkillsList from '../SkillsList'
 
 const apiStatusContent = {
   initial: 'INITIAL',
@@ -102,7 +104,7 @@ class SimilarJobs extends Component {
       />
       <h1>Oops! Something Went Wrong</h1>
       <p>We cannot seem to find the page you are looking for</p>
-      <button type="button" onClick={() => this.onReRender()}>
+      <button type="button" onClick={() => this.getSimilarJobs()}>
         Retry
       </button>
     </div>
@@ -134,7 +136,7 @@ class SimilarJobs extends Component {
               className="company-logo"
             />
             <div className="company-header">
-              <p className="company-title">{detailTitle}</p>
+              <h1 className="company-title">{detailTitle}</h1>
               <p className="company-rating">
                 <FaStar className="company-rating-icon" />
                 {detailRating}
@@ -154,7 +156,7 @@ class SimilarJobs extends Component {
             </div>
             <p className="company-package">{detailPackage}</p>
           </div>
-          <br className="separate" />
+          <hr className="separate" />
           <div className="description-visit">
             <h1 className="company-description-card">Description</h1>
             <a href={detailCompanyWebsiteUrl} className="visit-page">
@@ -166,14 +168,7 @@ class SimilarJobs extends Component {
           <h1 className="company-title">Skills</h1>
           <ul className="skills-items">
             {jobDetailsSkills.map(each => (
-              <li className="skills-lists">
-                <img
-                  src={each.skillsImageUrl}
-                  alt="skills"
-                  className="skills-img"
-                />
-                <p className="skills-name">{each.skillsName}</p>
-              </li>
+              <SkillsList skillsList={each} key={each.skillsName} />
             ))}
           </ul>
           <h1 className="company-title">Life at Company</h1>
@@ -190,36 +185,7 @@ class SimilarJobs extends Component {
           <h1 className="company-title">Similar Jobs</h1>
           <ul className="similar-jobs-card">
             {similar.map(each => (
-              <li className="similar-jobs-lists">
-                <div className="company-head-card">
-                  <img
-                    src={each.similarCompanyLogoUrl}
-                    alt="job details company logo"
-                    className="company-logo"
-                  />
-                  <div className="company-header">
-                    <p className="company-title">{each.similarTitle}</p>
-                    <p className="company-rating">
-                      <FaStar className="company-rating-icon" />
-                      {each.similarRating}
-                    </p>
-                  </div>
-                </div>
-                <h1 className="company-title">Description</h1>
-                <p className="company-description">
-                  {each.similarJobDescription}
-                </p>
-                <div className="company-details">
-                  <p className="company-location-type">
-                    <MdLocationOn className="location-type-icon" />
-                    {each.similarLocation}
-                  </p>
-                  <p className="company-location-type">
-                    <BsBriefcaseFill className="location-type-icon" />
-                    {each.similarEmploymentType}
-                  </p>
-                </div>
-              </li>
+              <SimilarJobsList similarJobsList={each} key={each.similarId} />
             ))}
           </ul>
         </div>

@@ -21,9 +21,13 @@ const JobsCardList = props => {
     <Link to={`/jobs/${id}`} className="job-links">
       <li className="job-lists">
         <div className="company-head-card">
-          <img src={companyLogoUrl} alt={title} className="company-logo" />
+          <img
+            src={companyLogoUrl}
+            alt="company logo"
+            className="company-logo"
+          />
           <div className="company-header">
-            <p className="company-title">{title}</p>
+            <h1 className="company-title">{title}</h1>
             <p className="company-rating">
               <FaStar className="company-rating-icon" />
               {rating}
@@ -43,8 +47,8 @@ const JobsCardList = props => {
           </div>
           <p className="company-package">{annualPackage}</p>
         </div>
-        <br className="separate" />
-        <p className="company-description-card">Description</p>
+        <hr className="separate" />
+        <h1 className="company-description-card">Description</h1>
         <p className="company-description">{jobDescription}</p>
       </li>
     </Link>
