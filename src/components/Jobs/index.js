@@ -56,10 +56,14 @@ class Jobs extends Component {
   }
 
   renderTypeofEmployment = () => {
+    const {employmentTypesList} = this.props
+    console.log(employmentTypesList)
     return <ul>Ok</ul>
   }
 
   renderSalaryRangesList = () => {
+    const {salaryRangesList} = this.props
+    console.log(salaryRangesList)
     return <ul>Ok</ul>
   }
 
@@ -69,7 +73,7 @@ class Jobs extends Component {
 
     return (
       <div className="profile-card">
-        <img src={profileImageUrl} alt={name} className="profile-pic" />
+        <img src={profileImageUrl} alt="profile" className="profile-pic" />
         <h1 className="profile-heading">{name}</h1>
         <p className="profile-bio">{shortBio}</p>
       </div>
@@ -139,23 +143,6 @@ class Jobs extends Component {
               {this.renderSalaryRangesList()}
             </div>
             <div className="job-list-container">
-              <div className="search-card desktop">
-                <input
-                  type="search"
-                  value={userSearch}
-                  onChange={this.onSearchUserInput}
-                  className="mobile-search-input"
-                  placeholder="Search"
-                />
-                <button
-                  type="button"
-                  aria-label="search"
-                  className="search-button"
-                  data-testid="searchButton"
-                >
-                  <BsSearch className="search-icon" />
-                </button>
-              </div>
               <JobsCard />
             </div>
           </div>

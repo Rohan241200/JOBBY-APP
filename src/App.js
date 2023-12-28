@@ -4,6 +4,7 @@ import LoginPage from './components/LoginPage'
 import Home from './components/Home'
 import Jobs from './components/Jobs'
 import ProtectedRoute from './components/ProtectedRoute'
+import SimilarJobs from './components/SimilarJobs'
 import NotFound from './components/NotFound'
 
 // These are the lists used in the application. You can move them to any component needed.
@@ -57,6 +58,7 @@ const App = () => (
       employmentTypesList={employmentTypesList}
       salaryRangesList={salaryRangesList}
     />
+    <ProtectedRoute exact path="/jobs/:id" component={SimilarJobs} />
     <Route exact path="/not-found" component={NotFound} />
     <Redirect to="/not-found" />
   </Switch>
