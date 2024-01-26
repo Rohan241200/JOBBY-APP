@@ -45,26 +45,6 @@
   width: 100%;
 }
 
-.skills-lists {
-  display: flex;
-  align-items: center;
-  width: 30%;
-  margin-left: 15px;
-  margin-bottom: 25px;
-  padding: 10px;
-}
-
-.skills-img {
-  width: 30%;
-  margin-right: 8px;
-}
-
-.skills-name {
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-}
-
 .life-at-company-container {
   display: flex;
   align-items: center;
@@ -95,15 +75,4 @@
   padding-left: 0px;
   flex-wrap: wrap;
   display: flex;
-}
-
-.similar-jobs-lists {
-  width: 30%;
-  margin-left: 15px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  background-color: #272727;
-  padding: 15px;
-  border-radius: 15px;
 }

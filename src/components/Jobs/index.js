@@ -8,10 +8,8 @@ import './index.css'
 
 const apiStatusContent = {
   initial: 'INITIAL',
-  successP: 'SUCCESS',
-  failureP: 'FAILURE',
-  successJ: 'SUCCESS',
-  failureJ: 'FAILURE',
+  success: 'SUCCESS',
+  failure: 'FAILURE',
   inProgress: 'INPROGRESS',
 }
 
@@ -21,7 +19,8 @@ class Jobs extends Component {
     userSalary: '',
     jobs: [],
     userEType: [],
-    apiStatus: apiStatusContent.initial,
+    apiStatusP: apiStatusContent.initial,
+    apiStatusJ: apiStatusContent.initial,
     profileCard: {},
   }
 
@@ -32,7 +31,7 @@ class Jobs extends Component {
 
   // GET PROFILE CARD
   getProfile = async () => {
-    this.setState({apiStatus: apiStatusContent.inProgress})
+    this.setState({apiStatusP: apiStatusContent.inProgress})
 
     const jwtToken = Cookies.get('jwt_token')
     const profileUrl = 'https://apis.ccbp.in/profile'
@@ -46,7 +45,7 @@ class Jobs extends Component {
     const data = await response.json()
     if (response.ok === true) {
       this.setState({
-        apiStatus: apiStatusContent.successP,
+        apiStatusP: apiStatusContent.success,
         profileCard: {
           name: data.profile_details.name,
           shortBio: data.profile_details.short_bio,
@@ -54,13 +53,13 @@ class Jobs extends Component {
         },
       })
     } else {
-      this.setState({apiStatus: apiStatusContent.failureP})
+      this.setState({apiStatusP: apiStatusContent.failure})
     }
   }
 
   // GET JOBS CARD
   getJobs = async () => {
-    this.setState({apiStatus: apiStatusContent.inProgress})
+    this.setState({apiStatusJ: apiStatusContent.inProgress})
 
     const {userSearch, userSalary, userEType} = this.state
 
@@ -89,9 +88,9 @@ class Jobs extends Component {
         annualPackage: each.package_per_annum,
       }))
 
-      this.setState({apiStatus: apiStatusContent.successJ, jobs: updateData})
+      this.setState({apiStatusJ: apiStatusContent.success, jobs: updateData})
     } else {
-      this.setState({apiStatus: apiStatusContent.failureJ})
+      this.setState({apiStatusJ: apiStatusContent.failure})
     }
   }
 
@@ -133,12 +132,12 @@ class Jobs extends Component {
   )
 
   getCheckStatus = () => {
-    const {apiStatus} = this.state
+    const {apiStatusP} = this.state
 
-    switch (apiStatus) {
-      case apiStatusContent.successP:
+    switch (apiStatusP) {
+      case apiStatusContent.success:
         return this.getProfileDetails()
-      case apiStatusContent.failureP:
+      case apiStatusContent.failure:
         return this.getProfileFailure()
       case apiStatusContent.inProgress:
         return this.getLoading()
@@ -290,11 +289,11 @@ class Jobs extends Component {
   }
 
   getRender = () => {
-    const {apiStatus} = this.state
-    switch (apiStatus) {
-      case apiStatusContent.successJ:
+    const {apiStatusJ} = this.state
+    switch (apiStatusJ) {
+      case apiStatusContent.success:
         return this.getJobsSuccess()
-      case apiStatusContent.failureJ:
+      case apiStatusContent.failure:
         return this.getJobsFailure()
       case apiStatusContent.inProgress:
         return this.getLoading()

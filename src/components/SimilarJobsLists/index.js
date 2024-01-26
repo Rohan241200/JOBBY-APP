@@ -17,29 +17,29 @@ const SimilarJobsList = props => {
 
   return (
     <li className="similar-jobs-lists" key={id}>
-      <div className="company-head-card">
+      <div className="similar-jobs-header">
         <img
           src={similarCompanyLogoUrl}
           alt="similar job company logo"
-          className="company-logo"
+          className="similar-jobs-company-logo"
         />
-        <div className="company-header">
-          <h1 className="company-title">{similarTitle}</h1>
-          <p className="company-rating">
-            <FaStar className="company-rating-icon" />
+        <div className="similar-job-company-header">
+          <h1 className="similar-job-company-title">{similarTitle}</h1>
+          <p className="similar-job-company-rating">
+            <FaStar className="similar-job-company-rating-icon" />
             {similarRating}
           </p>
         </div>
       </div>
-      <h1 className="company-title">Description</h1>
-      <p className="company-description">{similarJobDescription}</p>
-      <div className="company-details">
-        <p className="company-location-type">
-          <MdLocationOn className="location-type-icon" />
+      <h1 className="similar-job-company-title">Description</h1>
+      <p className="similar-job-company-description">{similarJobDescription}</p>
+      <div className="similar-job-company-details-location-type">
+        <p className="similar-job-company-location-type">
+          <MdLocationOn className="similar-job-location-type-icon" />
           {similarLocation}
         </p>
-        <p className="company-location-type">
-          <BsBriefcaseFill className="location-type-icon" />
+        <p className="similar-job-company-location-type">
+          <BsBriefcaseFill className="similar-job-location-type-icon" />
           {similarEmploymentType}
         </p>
       </div>
